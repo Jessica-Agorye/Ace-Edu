@@ -5,6 +5,7 @@ import Services from "./sections/Services";
 import Pricing from "./sections/Pricing";
 import Faq from "./sections/Faq";
 import CallToAction from "./components/CallToAction";
+import Footer from "./components/Footer";
 
 const Pages = () => {
   return (
@@ -16,6 +17,7 @@ const Pages = () => {
       <Pricing />
       <Faq />
       <CallToAction />
+      <Footer />
     </>
   );
 };
