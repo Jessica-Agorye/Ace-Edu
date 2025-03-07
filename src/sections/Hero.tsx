@@ -17,7 +17,7 @@ const Hero = () => {
           </p>
 
           <div className="flex items-center justify-center">
-            <button className="px-10 py-2 bg-amber-500 mt-10 rounded-3xl">
+            <button className="px-10 py-2 font-bold bg-amber-500 mt-10 rounded-3xl">
               Start your Journey Today!
             </button>
           </div>
