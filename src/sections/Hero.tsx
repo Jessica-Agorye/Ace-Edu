@@ -29,7 +29,7 @@ const Hero = () => {
         {/* Image section */}
         <div className="mt-10 flex justify-center">
           <img
-            src="/images/travel3.jpg"
+            src="/images/travel5.jpg"
             alt="Travel"
             className="w-full md:w-[80%] h-[300px] md:h-[500px] object-cover"
           />
