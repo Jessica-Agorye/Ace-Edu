@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const aboutUsText = [
   {
     img: "/images/book.png",
@@ -29,7 +31,15 @@ const aboutUsText = [
 const AboutUs = () => {
   return (
     <section className="mt-20 mx-4 mb-2 lg:mx-20">
-      <p className="text-6xl  font-semibold">Who are we?</p>
+      <motion.p
+        className="text-6xl  font-semibold"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
+        <p>Who are we?</p>
+      </motion.p>
       <p className="text-xl lg:text-3xl mt-12  font-bold leading-10 pr-10  mb-10 bg-gradient-to-r from-blue-400 to-green-300 text-transparent bg-clip-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         magna aliqua.

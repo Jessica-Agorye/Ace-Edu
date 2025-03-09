@@ -1,13 +1,16 @@
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
     <section>
       <div className="  w-full md:grid md:grid-cols-2 gap-4 px-4 md:px-10">
-        {/* Hero text section */}
         <div className=" relative mt-10 md:mt-30 flex flex-col justify-center items-center space-y-6">
-          <img
-            src="/images/arrow.png"
+          <motion.img
+            src="/images/plane1.png"
             alt="Travel"
-            className="hidden md:block absolute w-full h-[30%] md:w-[40%] lg:w-[20%]  md:h-[30%] -top-20 object-cover"
+            className="hidden md:block absolute w-full h-[30%] md:w-[40%] lg:w-[40%]  md:h-[30%] -top-20 object-cover"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
           />
           <p className="text-3xl text-center font-semibold leading-10 max-w-lg">
             Explore the World Through Unique Experiences!

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const pricingPlans = [
   {
     image: "",
@@ -38,7 +40,15 @@ const pricingPlans = [
 const Pricing = () => {
   return (
     <div className="p-4 md:mx-4 lg:mx-15 ">
-      <p className="text-4xl font-semibold">Pricing Plans</p>
+      <motion.p
+        className="text-6xl  font-semibold"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
+        <p>Pricing Plans</p>
+      </motion.p>
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {pricingPlans.map((item, index) => (
           <div

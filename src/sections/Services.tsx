@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Services = () => {
   // Set the default active service to 'security'
@@ -41,9 +42,17 @@ const Services = () => {
   return (
     <section className="p-8 mt-16 lg:mx-8">
       {/* Adjusted text size for mobile, tablet, and desktop */}
-      <p className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-left font-semibold">
-        Why Consult Ace?
-      </p>
+
+      <motion.p
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-left font-semibold"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
+        {" "}
+        <p>Why Consult Ace?</p>
+      </motion.p>
 
       {/* Button Container: Aligned to the left */}
       <div className="flex flex-wrap gap-4 mt-16">

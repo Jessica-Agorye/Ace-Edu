@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -16,17 +17,23 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  // ✅ Explicitly type `openIndex` to be `number | null`
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  // ✅ Define `index` as a `number`
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <div className=" mx-4 md:mx-8 lg:mx-18 mb-10 pb-4 mt-16 bg-amber-100">
-      <h2 className="text-3xl font-bold mb-4 pt-10 pl-4">FAQs</h2>
+      <motion.h2
+        className="text-3xl font-bold mb-4 pt-10 pl-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
+        <p>FAQs</p>
+      </motion.h2>
       <div className="space-y-4 p-2 ">
         {faqs.map((faq, index) => (
           <div
