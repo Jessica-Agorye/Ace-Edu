@@ -39,7 +39,7 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <div className="p-4 md:mx-4 lg:mx-15 ">
+    <div id="pricing" className="p-4 md:mx-4 lg:mx-15 ">
       <motion.p
         className="text-6xl  font-semibold"
         initial={{ opacity: 0, y: 20 }}

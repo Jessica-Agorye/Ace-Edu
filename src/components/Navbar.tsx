@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["About", "Services", "Pricing", "Programs"];
+  const links = ["About", "Services", "Pricing", "faq"];
 
   // Handle toggle visibility
   const toggleMenu = () => {
@@ -19,7 +19,14 @@ const Navbar = () => {
         <div className="hidden md:block">
           <ul className="flex gap-6 md:text-lg font-semibold">
             {links.map((link, index) => {
-              return <li key={index}>{link}</li>;
+              const href = `#${link.toLowerCase().replace(/\s+/g, "-")}`;
+              return (
+                <li key={index}>
+                  <a href={href} className="hover:text-green-500">
+                    {link}
+                  </a>
+                </li>
+              );
             })}
           </ul>
         </div>
@@ -57,7 +64,18 @@ const Navbar = () => {
         <div className="mt-8">
           <ul className="flex flex-col items-center gap-6">
             {links.map((link, index) => {
-              return <li key={index}>{link}</li>;
+              const href = `#${link.toLowerCase().replace(/\s+/g, "-")}`;
+              return (
+                <li key={index}>
+                  <a
+                    href={href}
+                    onClick={toggleMenu}
+                    className="hover:text-green-500"
+                  >
+                    {link}
+                  </a>
+                </li>
+              );
             })}
           </ul>
         </div>

@@ -26,7 +26,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Image section */}
         <div className="mt-10 flex justify-center">
           <img
             src="/images/travel5.jpg"

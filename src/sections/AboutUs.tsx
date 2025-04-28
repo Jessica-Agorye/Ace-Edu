@@ -30,7 +30,7 @@ const aboutUsText = [
 
 const AboutUs = () => {
   return (
-    <section className="mt-20 mx-4 mb-2 lg:mx-20">
+    <section id="about" className="mt-20 mx-4 mb-2 lg:mx-20">
       <motion.p
         className="text-6xl  font-semibold"
         initial={{ opacity: 0, y: 20 }}

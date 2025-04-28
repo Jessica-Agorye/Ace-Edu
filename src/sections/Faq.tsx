@@ -24,7 +24,10 @@ export default function FAQ() {
   };
 
   return (
-    <div className=" mx-4 md:mx-8 lg:mx-18 mb-10 pb-4 mt-16 bg-amber-100">
+    <div
+      id="faq"
+      className=" mx-4 md:mx-8 lg:mx-18 mb-10 pb-4 mt-16 bg-amber-100"
+    >
       <motion.h2
         className="text-3xl font-bold mb-4 pt-10 pl-4"
         initial={{ opacity: 0, y: 20 }}

@@ -40,7 +40,7 @@ const Services = () => {
   );
 
   return (
-    <section className="p-8 mt-16 lg:mx-8">
+    <section id="services" className="p-8 mt-16 lg:mx-8">
       {/* Adjusted text size for mobile, tablet, and desktop */}
 
       <motion.p
