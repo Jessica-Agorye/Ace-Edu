@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["About", "Services", "Pricing", "faq"];
+  const links = ["About", "Services", "Pricing", "FAQ", "Blog"];
 
   // Handle toggle visibility
   const toggleMenu = () => {
@@ -32,8 +32,8 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex md:justify-self-center md:mt-0">
-          <button className="px-8 py-2 rounded-full border border-gray-400 bg-green-300">
-            Book a Call
+          <button className="px-8 py-2 rounded-full border border-gray-400 bg-green-300 font-bold">
+            WhatsApp
           </button>
         </div>
 
