@@ -2,36 +2,40 @@ import { motion } from "framer-motion";
 
 const pricingPlans = [
   {
-    image: "",
     title: "Admission Facilitation",
     description: [
-      "Lorem ipsum",
-      "Another bullet point",
-      "Yet another point",
-      "Lorem ipsum",
+      "University application support",
+      "Document guidance",
+      "Offer letter assistance",
+      "Pre-departure support",
     ],
     price: "$100",
   },
   {
-    image: "",
     title: "Tourist Visa Facilitation",
-    description: ["Lorem ipsum", "Another bullet point", "Yet another point"],
+    description: [
+      "Visa consultation",
+      "Document preparation",
+      "Application filing",
+    ],
     price: "$200",
   },
   {
-    image: "",
     title: "Permanent Visa Facilitation",
-    description: ["Lorem ipsum", "Another bullet point", "Yet another point"],
+    description: [
+      "Eligibility assessment",
+      "Full application support",
+      "Documentation review",
+    ],
     price: "$300",
   },
   {
-    image: "",
     title: "Work Visa Facilitation",
     description: [
-      "Lorem ipsum",
-      "Another bullet point",
-      "Yet another point",
-      "Lorem ipsum",
+      "Job pathway guidance",
+      "Visa processing support",
+      "Interview preparation",
+      "Relocation assistance",
     ],
     price: "$150",
   },
@@ -39,44 +43,96 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <div id="pricing" className="p-4 md:mx-4 lg:mx-15 ">
-      <motion.p
-        className="text-6xl  font-semibold"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: false }}
-      >
-        <p>Pricing Plans</p>
-      </motion.p>
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {pricingPlans.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white border border-green-300 rounded-lg shadow-lg overflow-hidden p-6 flex flex-col transition-colors duration-500 hover:border-purple-300"
-          >
-            <h3 className="text-2xl font-semibold mb-4 ">{item.title}</h3>
-            <ul className="list-inside list-disc mb-6">
-              {item.description && item.description.length > 0 ? (
-                item.description.map((desc, i) => (
-                  <li key={i} className="text-gray-700 mb-2">
-                    {desc}
-                  </li>
-                ))
-              ) : (
-                <li>No description available</li>
-              )}
-            </ul>
-            <div className="text-xl font-semibold text-center mb-6">
-              {item.price}
-            </div>
-            <button className="bg-amber-500 px-4 p-2 text-white rounded-full hover:bg-amber-600 transition duration-300 w-32 mx-auto">
-              Register Here
-            </button>
-          </div>
-        ))}
+    <section
+      id="pricing"
+      className="relative py-24 px-5 md:px-10 bg-[#f8fafc] overflow-hidden"
+    >
+      {/* Background Glow */}
+      <div className="absolute left-0 top-32 w-72 h-72 bg-amber-200/20 blur-3xl rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="max-w-3xl"
+        >
+          <p className="uppercase tracking-[0.3em] text-sm text-amber-500 font-semibold mb-5">
+            Pricing
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Simple & Transparent Pricing
+          </h2>
+
+          <p className="mt-6 text-gray-600 text-lg leading-relaxed">
+            Choose a plan that fits your journey. We offer flexible facilitation
+            packages designed to support your global goals.
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {pricingPlans.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+              className="
+                relative
+                bg-white/70
+                backdrop-blur-sm
+                border border-white/40
+                rounded-[28px]
+                p-6
+                hover:-translate-y-2
+                transition-all
+                duration-500
+                shadow-sm
+                hover:shadow-2xl
+              "
+            >
+              {/* Glow Hover */}
+              <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-amber-100/0 to-amber-100/40 opacity-0 hover:opacity-100 transition duration-500"></div>
+
+              <div className="relative z-10">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {item.title}
+                </h3>
+
+                {/* Price */}
+                <div className="text-3xl font-bold text-amber-500 mb-6">
+                  {item.price}
+                </div>
+
+                {/* Features */}
+                <ul className="space-y-3 mb-8">
+                  {item.description.map((desc, i) => (
+                    <li key={i} className="text-gray-600 text-sm flex gap-2">
+                      <span className="text-amber-400">•</span>
+                      {desc}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Button */}
+                <button className="w-full py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300">
+                  Get Started
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

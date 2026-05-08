@@ -1,61 +1,96 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-const faqs = [
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+const faqs: FAQItem[] = [
   {
     question: "What is your return policy?",
     answer: "You can return items within 30 days of purchase.",
   },
   {
     question: "How long does shipping take?",
-    answer: "Shipping takes 5-7 business days, depending on your location.",
+    answer: "Shipping takes 5-7 business days depending on your location.",
   },
   {
-    question: "Do you offer international?",
-    answer: "Yes, we ship to selected countries worldwide.",
+    question: "Do you offer international services?",
+    answer: "Yes, we provide services across selected countries worldwide.",
   },
 ];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleFAQ = (index: number) => {
+  const toggleFAQ = (index: number): void => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div
+    <section
       id="faq"
-      className=" mx-4 md:mx-8 lg:mx-18 mb-10 pb-4 mt-16 bg-amber-100"
+      className="relative py-24 px-5 md:px-10 bg-[#f8fafc] overflow-hidden"
     >
-      <motion.h2
-        className="text-3xl font-bold mb-4 pt-10 pl-4"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: false }}
-      >
-        <p>FAQs</p>
-      </motion.h2>
-      <div className="space-y-4 p-2 ">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className=" pb-2 px-4 border-b-2 border-b-neutral-300  mb-8"
-          >
-            <button
-              className="w-full flex justify-between items-center text-lg font-medium p-2 focus:outline-none "
-              onClick={() => toggleFAQ(index)}
+      <div className="max-w-4xl mx-auto relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <p className="uppercase tracking-[0.3em] text-sm text-amber-500 font-semibold mb-5">
+            FAQs
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Frequently Asked Questions
+          </h2>
+
+          <p className="mt-6 text-gray-600 text-lg">
+            Everything you need to know before starting your journey with us.
+          </p>
+        </motion.div>
+
+        {/* FAQ Items */}
+        <div className="mt-14 space-y-4">
+          {faqs.map((faq: FAQItem, index: number) => (
+            <div
+              key={index}
+              className="bg-white/70 backdrop-blur-sm border border-white/40 rounded-2xl px-6 py-5 shadow-sm"
             >
-              {faq.question}
-              <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
-            </button>
-            {openIndex === index && (
-              <p className="mt-2 p-2 text-gray-600">{faq.answer}</p>
-            )}
-          </div>
-        ))}
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center text-left"
+              >
+                <span className="text-lg font-semibold text-gray-900">
+                  {faq.question}
+                </span>
+
+                <span className="text-2xl text-amber-500 font-light">
+                  {openIndex === index ? "−" : "+"}
+                </span>
+              </button>
+
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.p
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-4 text-gray-600 leading-7"
+                  >
+                    {faq.answer}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

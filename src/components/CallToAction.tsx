@@ -2,25 +2,56 @@ import { motion } from "framer-motion";
 
 const CallToAction = () => {
   return (
-    <div className="  mx-4 md:mx-8 lg:mx-16 mt-20 mb-10 text-center place-items-center">
-      <p className="text-3xl lg:text-6xl font-bold pl-2 pt-3">
-        Let us help you get started with your journey!
-      </p>
-      <p className=" mt-4 lg:mt-10 pl-2 lg:text-xl">
-        We over personalised assistance Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Adipisci, fuga!
-      </p>
+    <section className="relative py-24 px-5 md:px-10 bg-[#f8fafc] overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute left-0 top-20 w-72 h-72 bg-amber-200/20 blur-3xl rounded-full"></div>
 
-      <motion.button
-        className="py-2 px-4 bg-green-200 rounded-full mt-4 font-semibold"
-        initial={{ scale: 1 }}
-        whileHover={{ scale: 1.3 }}
-        whileTap={{ scale: 1.0 }}
-        transition={{ duration: 0.4 }}
-      >
-        Book a Call
-      </motion.button>
-    </div>
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Heading */}
+        <motion.h2
+          className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          Let’s Start Your Journey Today
+        </motion.h2>
+
+        {/* Subtext */}
+        <motion.p
+          className="mt-6 text-gray-600 text-lg md:text-xl leading-relaxed"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          viewport={{ once: true }}
+        >
+          Get personalized guidance for study abroad, work opportunities,
+          tourism, and global travel experiences tailored just for you.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            className="px-8 py-4 rounded-full bg-amber-500 text-white font-semibold shadow-lg hover:bg-amber-400 transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Book a Call
+          </motion.button>
+
+          <button className="px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition">
+            Learn More
+          </button>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

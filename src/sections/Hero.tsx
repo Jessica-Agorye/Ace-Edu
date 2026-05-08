@@ -2,37 +2,96 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section>
-      <div className="  w-full md:grid md:grid-cols-2 gap-4 px-4 md:px-10">
-        <div className=" relative mt-10 md:mt-30 flex flex-col justify-center items-center space-y-6">
+    <section className="w-full min-h-screen bg-[#f8fafc] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 pt-28 md:pt-36 pb-16 grid md:grid-cols-2 items-center gap-14">
+        {/* LEFT CONTENT */}
+        <div className="relative">
+          {/* Floating Plane */}
           <motion.img
             src="/images/plane1.png"
-            alt="Travel"
-            className="hidden md:block absolute w-full h-[30%] md:w-[40%] lg:w-[40%]  md:h-[30%] -top-20 object-cover"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+            alt="Plane"
+            className="hidden md:block absolute w-32 lg:w-40 -top-20 left-10"
+            animate={{ y: [0, -18, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
-          <p className="text-3xl text-center font-semibold leading-10 max-w-lg">
-            Explore the World Through Unique Experiences!
-          </p>
-          <p className="mt-4 text-center max-w-lg">
-            Tailored experiences for work, learning, tourism, and adventure.
+
+          {/* Small Heading */}
+          <p className="uppercase tracking-[0.3em] text-sm text-amber-500 font-semibold mb-5">
+            Discover • Travel • Explore
           </p>
 
-          <div className="flex items-center justify-center">
-            <button className="px-10 py-2 font-bold bg-amber-500 mt-10 rounded-3xl">
-              Start your Journey Today!
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 max-w-xl">
+            Explore The World Through Unique Experiences
+          </h1>
+
+          {/* Description */}
+          <p className="mt-6 text-gray-600 text-base md:text-lg leading-relaxed max-w-lg">
+            Tailored experiences for work, study, tourism, and unforgettable
+            adventures across the world.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            <button className="px-8 py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-lg">
+              Start Your Journey
             </button>
+
+            <button className="px-8 py-3 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition duration-300">
+              Learn More
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div className="flex gap-10 mt-14">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">10K+</h2>
+              <p className="text-gray-500 text-sm">Happy Travelers</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">50+</h2>
+              <p className="text-gray-500 text-sm">Destinations</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">24/7</h2>
+              <p className="text-gray-500 text-sm">Support</p>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 flex justify-center">
+        {/* RIGHT IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="relative flex justify-center items-center"
+        >
+          {/* Soft Glow */}
+          <div className="absolute w-[70%] h-[70%] bg-amber-200/30 blur-3xl rounded-full"></div>
+
           <img
             src="/images/travel5.jpg"
             alt="Travel"
-            className="w-full md:w-[80%] h-[300px] md:h-[500px] object-cover"
+            className="
+      relative z-10
+      w-full md:w-[95%]
+      h-[350px] md:h-[550px]
+      object-cover
+    "
+            style={{
+              WebkitMaskImage:
+                "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.4) 85%, transparent 100%)",
+              maskImage:
+                "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.4) 85%, transparent 100%)",
+            }}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Services = () => {
-  // Set the default active service to 'security'
-  const [activeService, setActiveService] = useState<string>("security");
+  const [activeService, setActiveService] = useState("security");
 
   const servicesData = [
     {
@@ -11,98 +10,136 @@ const Services = () => {
       image: "/images/travel1.jpg",
       title: "Security",
       description:
-        "Over 55 years of experience. We have an unparalleled track record of keeping our participants safe. Whether you’re exploring one of our nation’s great cities or headed off the beaten path somewhere around the world, we’ve got your back. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        "We prioritize your safety throughout every journey, ensuring secure and seamless global experiences wherever you go.",
     },
+
     {
       service: "integrity",
       image: "/images/travel2.jpg",
       title: "Integrity",
       description:
-        "Over 55 years of experience. We have an unparalleled track record of keeping our participants safe. Whether you’re exploring one of our nation’s great cities or headed off the beaten path somewhere around the world, we’ve got your back. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        "We operate with transparency, trust, and professionalism to provide reliable international opportunities and services.",
     },
+
     {
       service: "results",
-      image: "/images/travel1.jpg",
+      image: "/images/travel3.jpg",
       title: "Results",
       description:
-        "Over 55 years of experience. We have an unparalleled track record of keeping our participants safe. Whether you’re exploring one of our nation’s great cities or headed off the beaten path somewhere around the world, we’ve got your back. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        "From study opportunities to unforgettable travel experiences, we focus on delivering impactful and life-changing outcomes.",
     },
   ];
 
-  // Handle button click to toggle between services
-  const handleClick = (service: string) => {
-    setActiveService(service); // Directly set the active service to the clicked one
-  };
-
-  // Find the active service data based on the clicked service
   const activeServiceData = servicesData.find(
-    (service) => service.service === activeService
+    (service) => service.service === activeService,
   );
 
   return (
-    <section id="services" className="p-8 mt-16 lg:mx-8">
-      {/* Adjusted text size for mobile, tablet, and desktop */}
+    <section
+      id="services"
+      className="relative py-24 px-5 md:px-10 bg-[#f8fafc] overflow-hidden"
+    >
+      {/* Background Glow */}
+      <div className="absolute right-0 top-20 w-72 h-72 bg-amber-200/20 blur-3xl rounded-full"></div>
 
-      <motion.p
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-left font-semibold"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: false }}
-      >
-        {" "}
-        <p>Why Consult Ace?</p>
-      </motion.p>
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="max-w-3xl"
+        >
+          <p className="uppercase tracking-[0.3em] text-sm text-amber-500 font-semibold mb-5">
+            Why Choose Us
+          </p>
 
-      {/* Button Container: Aligned to the left */}
-      <div className="flex flex-wrap gap-4 mt-16">
-        {servicesData.map((service) => (
-          <button
-            key={service.service}
-            onClick={() => handleClick(service.service)}
-            className={`px-6 py-2 text-white rounded-md focus:outline-none transition-all duration-300 ${
-              activeService === service.service
-                ? "bg-gray-500" // Active button has gray color
-                : service.service === "security"
-                ? "bg-blue-500 hover:bg-blue-600" // Security button color
-                : service.service === "integrity"
-                ? "bg-green-500 hover:bg-green-600" // Integrity button color
-                : "bg-red-500 hover:bg-red-600" // Results button color
-            }`}
-          >
-            {service.title}
-          </button>
-        ))}
-      </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Experiences Built On Trust & Excellence
+          </h2>
 
-      {/* Content Section */}
-      <div className="mt-8 space-y-8">
-        {activeServiceData && (
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="w-full lg:w-1/2">
-              <div className="p-6 bg-white rounded-lg shadow-xl">
-                {/* Responsive text size for title */}
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">
+          <p className="mt-6 text-gray-600 text-lg leading-relaxed">
+            We combine global opportunities, personalized support, and
+            unforgettable experiences to help you confidently explore the world.
+          </p>
+        </motion.div>
+
+        {/* Service Buttons */}
+        <div className="flex flex-wrap gap-4 mt-14">
+          {servicesData.map((service) => (
+            <button
+              key={service.service}
+              onClick={() => setActiveService(service.service)}
+              className={`
+                px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300
+                ${
+                  activeService === service.service
+                    ? "bg-amber-500 text-white shadow-lg"
+                    : "bg-white text-gray-700 border border-gray-200 hover:border-amber-300 hover:text-amber-500"
+                }
+              `}
+            >
+              {service.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Content */}
+        <AnimatePresence mode="wait">
+          {activeServiceData && (
+            <motion.div
+              key={activeServiceData.service}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="grid lg:grid-cols-2 gap-14 items-center mt-16"
+            >
+              {/* LEFT CONTENT */}
+              <div>
+                <div className="inline-flex px-4 py-2 rounded-full bg-amber-100 text-amber-600 text-sm font-medium mb-6">
                   {activeServiceData.title}
-                </h2>
-                {/* Responsive text size for description */}
-                <p className="text-sm sm:text-base md:text-lg leading-8 mt-4">
+                </div>
+
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                  Delivering Reliable Global Experiences
+                </h3>
+
+                <p className="mt-6 text-gray-600 text-lg leading-8">
                   {activeServiceData.description}
                 </p>
+
+                <button className="mt-10 px-8 py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-lg">
+                  Learn More
+                </button>
               </div>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <img
-                src={activeServiceData.image}
-                alt={activeServiceData.title}
-                className="w-full h-[60%] object-cover rounded-r-lg shadow-lg"
-                style={{
-                  clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%)",
-                }}
-              />
-            </div>
-          </div>
-        )}
+
+              {/* RIGHT IMAGE */}
+              <div className="relative flex justify-center">
+                {/* Glow */}
+                <div className="absolute w-[70%] h-[70%] bg-amber-200/30 blur-3xl rounded-full"></div>
+
+                <img
+                  src={activeServiceData.image}
+                  alt={activeServiceData.title}
+                  className="
+                    relative z-10
+                    w-full md:w-[95%]
+                    h-[350px] md:h-[550px]
+                    object-cover
+                  "
+                  style={{
+                    WebkitMaskImage:
+                      "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.5) 85%, transparent 100%)",
+                    maskImage:
+                      "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.5) 85%, transparent 100%)",
+                  }}
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

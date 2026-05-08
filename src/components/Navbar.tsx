@@ -1,76 +1,90 @@
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   const links = ["About", "Services", "Pricing", "FAQ", "Blog"];
 
-  // Handle toggle visibility
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
-    <div>
-      <div className="grid grid-cols-2 md:grid-cols-3 md:place-items-center">
-        <div>
-          <img src="/images/acelogo.png" alt="Logo" className="w-[50%]" />
-        </div>
+    <>
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-50">
+        <div className="max-w-7xl mx-auto px-5">
+          <div
+            className="mt-4 flex items-center justify-between
+            bg-white/70 backdrop-blur-md
+            border border-gray-200
+            rounded-full
+            px-5 py-2 shadow-sm"
+          >
+            {/* Logo */}
+            <img
+              src="/images/acelogo.png"
+              alt="Logo"
+              className="w-16 md:w-20 object-contain"
+            />
 
-        <div className="hidden md:block">
-          <ul className="flex gap-6 md:text-lg font-semibold">
-            {links.map((link, index) => {
-              const href = `#${link.toLowerCase().replace(/\s+/g, "-")}`;
-              return (
-                <li key={index}>
-                  <a href={href} className="hover:text-green-500">
-                    {link}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-6">
+              <ul className="flex items-center gap-6 text-sm font-medium text-gray-700">
+                {links.map((link, index) => {
+                  const href = `#${link.toLowerCase().replace(/\s+/g, "-")}`;
 
-        <div className="hidden md:flex md:justify-self-center md:mt-0">
-          <button className="px-8 py-2 rounded-full border border-gray-400 bg-green-300 font-bold">
-            WhatsApp
-          </button>
-        </div>
+                  return (
+                    <li key={index}>
+                      <a
+                        href={href}
+                        className="hover:text-amber-500 transition"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
 
-        {/* Hamburger menu for mobile */}
-        <div className="flex justify-end mt-2 md:hidden" onClick={toggleMenu}>
-          <img src="/images/hamburgermenu.png" alt="Menu" className="w-[50%]" />
-        </div>
-      </div>
+              {/* CTA */}
+              <button className="px-4 py-1.5 rounded-full bg-amber-500 text-white text-xs font-semibold hover:bg-amber-400 transition shadow-sm">
+                WhatsApp
+              </button>
+            </div>
 
-      {/* Mobile menu */}
+            {/* Mobile Toggle */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden text-gray-800"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
       <div
-        className={`w-full h-[70%] bg-blue-200 text-black fixed top-0 left-0 right-0 z-50 md:hidden transition-transform transform ${
+        className={`fixed top-0 right-0 h-screen w-[70%] bg-white z-50 transform transition-transform duration-500 md:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-between mx-4 mt-4">
-          <img src="/images/acelogo.png" alt="Logo" className="w-[30%]" />
-
-          {/* Close Hamburger menu button */}
-          <img
-            src="/images/hamburgermenu.png"
-            alt="Close Menu"
-            onClick={toggleMenu}
-            className="w-[30%]"
-          />
+        <div className="flex justify-between items-center px-5 py-5 border-b border-gray-200">
+          <img src="/images/acelogo.png" alt="Logo" className="w-20" />
+          <button onClick={() => setMenuOpen(false)} className="text-gray-800">
+            <X size={20} />
+          </button>
         </div>
 
-        <div className="mt-8">
-          <ul className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center mt-14">
+          <ul className="flex flex-col gap-6 text-center">
             {links.map((link, index) => {
               const href = `#${link.toLowerCase().replace(/\s+/g, "-")}`;
+
               return (
                 <li key={index}>
                   <a
                     href={href}
-                    onClick={toggleMenu}
-                    className="hover:text-green-500"
+                    onClick={() => setMenuOpen(false)}
+                    className="text-lg text-gray-800 hover:text-amber-500 transition"
                   >
                     {link}
                   </a>
@@ -78,16 +92,13 @@ const Navbar = () => {
               );
             })}
           </ul>
-        </div>
 
-        {/* Socials */}
-        <div className="mt-14 flex gap-2 justify-center">
-          <p>Facebook</p>
-          <p>Instagram</p>
-          <p>Twitter</p>
+          <button className="mt-10 px-6 py-3 rounded-full bg-amber-500 text-white font-semibold">
+            WhatsApp
+          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ import Pricing from "./sections/Pricing";
 import Faq from "./sections/Faq";
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
-import ChatWidget from "./components/ChatWidget";
+// import ChatWidget from "./components/ChatWidget";
 
 const Pages = () => {
   return (
@@ -19,7 +19,7 @@ const Pages = () => {
       <Faq />
       <CallToAction />
       <Footer />
-      <ChatWidget />
+      {/* <ChatWidget /> */}
     </>
   );
 };
