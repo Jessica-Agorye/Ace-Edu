@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion(Link);
 
 const CallToAction = () => {
   return (
@@ -38,17 +41,21 @@ const CallToAction = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <motion.button
+          <MotionLink
             className="px-8 py-4 rounded-full bg-amber-500 text-white font-semibold shadow-lg hover:bg-amber-400 transition"
+            to="/book-call"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
             Book a Call
-          </motion.button>
+          </MotionLink>
 
-          <button className="px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition">
+          <a
+            href="#about"
+            className="px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition inline-block"
+          >
             Learn More
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

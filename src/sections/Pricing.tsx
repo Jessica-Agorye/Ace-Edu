@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const pricingPlans = [
   {
@@ -124,9 +125,11 @@ const Pricing = () => {
                 </ul>
 
                 {/* Button */}
-                <button className="w-full py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300">
-                  Get Started
-                </button>
+                <Link to="/get-started">
+                  <button className="w-full py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </motion.div>
           ))}

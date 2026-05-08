@@ -41,9 +41,12 @@ const Hero = () => {
               Start Your Journey
             </button>
 
-            <button className="px-8 py-3 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition duration-300">
+            <a
+              href="#about"
+              className="px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition inline-block"
+            >
               Learn More
-            </button>
+            </a>
           </div>
 
           {/* Stats */}

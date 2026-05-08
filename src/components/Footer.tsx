@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="relative bg-gray-950 text-white overflow-hidden">
@@ -36,9 +38,12 @@ const Footer = () => {
             </ul>
 
             {/* Optional CTA */}
-            <button className="px-6 py-3 rounded-full bg-amber-500 text-white text-sm font-semibold hover:bg-amber-400 transition">
+            <Link
+              to="/book-call"
+              className="px-6 py-3 rounded-full bg-amber-500 text-white text-sm font-semibold hover:bg-amber-400 transition inline-block"
+            >
               Book a Consultation
-            </button>
+            </Link>
           </div>
         </div>
 
