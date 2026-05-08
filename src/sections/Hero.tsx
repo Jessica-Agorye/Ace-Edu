@@ -36,14 +36,15 @@ const Hero = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-10">
-            <button className="px-8 py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-lg">
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center sm:justify-start items-center sm:items-start">
+            <button className="w-full sm:w-auto px-8 py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-lg">
               Start Your Journey
             </button>
 
             <a
               href="#about"
-              className="px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition inline-block"
+              className="w-full sm:w-auto px-8 py-3 rounded-full border border-gray-300 text-gray-800 font-semibold hover:bg-black hover:text-white transition text-center"
             >
               Learn More
             </a>
