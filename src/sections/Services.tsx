@@ -1,19 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
-type Service = {
-  service: string;
-  image: string;
-  title: string;
-  description: string;
-  more: string;
-};
-
-const Services = () => {
+const Services = ({ preview = false }) => {
   const [activeService, setActiveService] = useState("security");
   const [showMore, setShowMore] = useState(false);
 
-  const servicesData: Service[] = [
+  const servicesData = [
     {
       service: "security",
       image: "/images/travel1.jpg",
@@ -54,118 +47,115 @@ const Services = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="max-w-3xl"
-        >
-          <p className="uppercase tracking-[0.3em] text-sm text-amber-500 font-semibold mb-5">
-            Why Choose Us
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        <div className="max-w-3xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             Experiences Built On Trust & Excellence
           </h2>
 
-          <p className="mt-6 text-gray-600 text-lg leading-relaxed">
+          <p className="mt-6 text-gray-600 text-lg">
             We combine global opportunities, personalized support, and
             unforgettable experiences to help you confidently explore the world.
           </p>
-        </motion.div>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap gap-4 mt-14">
-          {servicesData.map((service) => (
-            <button
-              key={service.service}
-              onClick={() => {
-                setActiveService(service.service);
-                setShowMore(false);
-              }}
-              className={`
-                px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300
-                ${
-                  activeService === service.service
-                    ? "bg-amber-500 text-white shadow-lg"
-                    : "bg-white text-gray-700 border border-gray-200 hover:border-amber-300 hover:text-amber-500"
-                }
-              `}
+          {/* ONLY BUTTON IN PREVIEW MODE */}
+          {preview && (
+            <Link
+              to="/services"
+              className="inline-block mt-6 px-6 py-3 rounded-full bg-amber-500 text-white font-semibold"
             >
-              {service.title}
-            </button>
-          ))}
+              Explore all services
+            </Link>
+          )}
         </div>
 
-        {/* Content */}
-        <AnimatePresence mode="wait">
-          {activeServiceData && (
-            <motion.div
-              key={activeServiceData.service}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="grid lg:grid-cols-2 gap-14 items-center mt-16"
-            >
-              {/* LEFT */}
-              <div>
-                <div className="inline-flex px-4 py-2 rounded-full bg-amber-100 text-amber-600 text-sm font-medium mb-6">
-                  {activeServiceData.title}
-                </div>
-
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                  Delivering Reliable Global Experiences
-                </h3>
-
-                <p className="mt-6 text-gray-600 text-lg leading-8">
-                  {activeServiceData.description}
-                </p>
-
-                {/* 🔥 REVEALED TEXT */}
-                <AnimatePresence>
-                  {showMore && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="mt-4 text-gray-600 text-lg leading-8 overflow-hidden"
-                    >
-                      {activeServiceData.more}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
-
-                {/* BUTTON */}
+        {/* EVERYTHING BELOW IS HIDDEN IN PREVIEW MODE */}
+        {!preview && (
+          <>
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 mt-14">
+              {servicesData.map((service) => (
                 <button
-                  onClick={() => setShowMore(!showMore)}
-                  className="mt-10 px-8 py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-lg"
-                >
-                  {showMore ? "Show Less" : "Learn More"}
-                </button>
-              </div>
-
-              {/* RIGHT IMAGE */}
-              <div className="relative flex justify-center">
-                <div className="absolute w-[70%] h-[70%] bg-amber-200/30 blur-3xl rounded-full"></div>
-
-                <img
-                  src={activeServiceData.image}
-                  alt={activeServiceData.title}
-                  className="relative z-10 w-full md:w-[95%] h-[350px] md:h-[550px] object-cover"
-                  style={{
-                    WebkitMaskImage:
-                      "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.5) 85%, transparent 100%)",
-                    maskImage:
-                      "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.5) 85%, transparent 100%)",
+                  key={service.service}
+                  onClick={() => {
+                    setActiveService(service.service);
+                    setShowMore(false);
                   }}
-                />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                  className={`
+                    px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300
+                    ${
+                      activeService === service.service
+                        ? "bg-amber-500 text-white shadow-lg"
+                        : "bg-white text-gray-700 border border-gray-200 hover:border-amber-300 hover:text-amber-500"
+                    }
+                  `}
+                >
+                  {service.title}
+                </button>
+              ))}
+            </div>
+
+            {/* Content */}
+            <AnimatePresence mode="wait">
+              {activeServiceData && (
+                <motion.div
+                  key={activeServiceData.service}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="grid lg:grid-cols-2 gap-14 items-center mt-16"
+                >
+                  {/* LEFT */}
+                  <div>
+                    <div className="inline-flex px-4 py-2 rounded-full bg-amber-100 text-amber-600 text-sm font-medium mb-6">
+                      {activeServiceData.title}
+                    </div>
+
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                      Delivering Reliable Global Experiences
+                    </h3>
+
+                    <p className="mt-6 text-gray-600 text-lg leading-8">
+                      {activeServiceData.description}
+                    </p>
+
+                    <AnimatePresence>
+                      {showMore && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4 }}
+                          className="mt-4 text-gray-600 text-lg leading-8 overflow-hidden"
+                        >
+                          {activeServiceData.more}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="mt-10 px-8 py-3 rounded-full bg-amber-500 text-white font-semibold"
+                    >
+                      {showMore ? "Show Less" : "Learn More"}
+                    </button>
+                  </div>
+
+                  {/* RIGHT */}
+                  <div className="relative flex justify-center">
+                    <div className="absolute w-[70%] h-[70%] bg-amber-200/30 blur-3xl rounded-full"></div>
+
+                    <img
+                      src={activeServiceData.image}
+                      alt={activeServiceData.title}
+                      className="relative z-10 w-full md:w-[95%] h-[350px] md:h-[550px] object-cover"
+                    />
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </>
+        )}
       </div>
     </section>
   );

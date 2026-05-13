@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const links = ["Home", "About", "Services", "Pricing", "FAQ", "Blog"];
-
-  const getHref = (link: string) =>
-    `#${link.toLowerCase().replace(/\s+/g, "-")}`;
+  const links = [
+    { name: "Home", path: "/" },
+    // { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "FAQ", path: "/faq" },
+    { name: "Blog", path: "/blog" },
+  ];
 
   return (
     <>
@@ -32,37 +36,16 @@ const Navbar = () => {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-6">
               <ul className="flex items-center gap-6 text-sm font-medium text-gray-700">
-                {links.map((link, index) => {
-                  const isBlog = link === "Blog";
-                  const isHome = link === "Home";
-
-                  return (
-                    <li key={index}>
-                      {isBlog ? (
-                        <Link
-                          to="/blog"
-                          className="hover:text-amber-500 transition"
-                        >
-                          {link}
-                        </Link>
-                      ) : isHome ? (
-                        <Link
-                          to="/"
-                          className="hover:text-amber-500 transition"
-                        >
-                          {link}
-                        </Link>
-                      ) : (
-                        <a
-                          href={getHref(link)}
-                          className="hover:text-amber-500 transition"
-                        >
-                          {link}
-                        </a>
-                      )}
-                    </li>
-                  );
-                })}
+                {links.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="hover:text-amber-500 transition"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
 
               {/* CTA */}
@@ -91,7 +74,7 @@ const Navbar = () => {
         {/* Top */}
         <div className="flex justify-between items-center px-5 py-5 border-b border-gray-200">
           <img src="/images/acelogo.png" alt="Logo" className="w-20" />
-          <button onClick={() => setMenuOpen(false)} className="text-gray-800">
+          <button onClick={() => setMenuOpen(false)}>
             <X size={20} />
           </button>
         </div>
@@ -99,40 +82,17 @@ const Navbar = () => {
         {/* Links */}
         <div className="flex flex-col items-center mt-14">
           <ul className="flex flex-col gap-6 text-center">
-            {links.map((link, index) => {
-              const isBlog = link === "Blog";
-              const isHome = link === "Home";
-
-              return (
-                <li key={index}>
-                  {isBlog ? (
-                    <Link
-                      to="/blog"
-                      onClick={() => setMenuOpen(false)}
-                      className="text-lg text-gray-800 hover:text-amber-500 transition"
-                    >
-                      {link}
-                    </Link>
-                  ) : isHome ? (
-                    <Link
-                      to="/"
-                      onClick={() => setMenuOpen(false)}
-                      className="text-lg text-gray-800 hover:text-amber-500 transition"
-                    >
-                      {link}
-                    </Link>
-                  ) : (
-                    <a
-                      href={getHref(link)}
-                      onClick={() => setMenuOpen(false)}
-                      className="text-lg text-gray-800 hover:text-amber-500 transition"
-                    >
-                      {link}
-                    </a>
-                  )}
-                </li>
-              );
-            })}
+            {links.map((link) => (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-lg text-gray-800 hover:text-amber-500 transition"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           {/* CTA */}
