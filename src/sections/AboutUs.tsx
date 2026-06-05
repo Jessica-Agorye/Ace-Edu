@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 const aboutUsText = [
   {
     img: "/images/book.png",
-    title: "Education",
+    title: "Study abroad advisory",
     description:
-      "Helping students discover global study opportunities and access quality education abroad.",
+      "Discover the countless benefits of studying abroad and how it can shape your future. Gain a global perspective, expand your horizons, enhance your academic qualifications, and develop lifelong skills. At Ace, we believe in empowering individuals through international education.",
   },
 
   {
@@ -22,6 +22,18 @@ const aboutUsText = [
       "Creating unforgettable travel experiences tailored to adventure, culture, and exploration.",
   },
 
+  {
+    img: "/images/tour.png",
+    title: "Tourism",
+    description:
+      "Curating premium tourism experiences across breathtaking destinations around the world.",
+  },
+  {
+    img: "/images/tour.png",
+    title: "Tourism",
+    description:
+      "Curating premium tourism experiences across breathtaking destinations around the world.",
+  },
   {
     img: "/images/tour.png",
     title: "Tourism",

@@ -103,15 +103,11 @@ const Services = ({ preview = false }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="grid lg:grid-cols-2 gap-14 items-center mt-16"
+                  className="grid lg:grid-cols-2 gap-14 items-start mt-16"
                 >
-                  {/* LEFT */}
+              
                   <div>
-                    <div className="inline-flex px-4 py-2 rounded-full bg-amber-100 text-amber-600 text-sm font-medium mb-6">
-                      {activeServiceData.title}
-                    </div>
-
-                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                    <h3 className="text-3xl md:text-4xl  font-bold text-gray-900 leading-tight">
                       Delivering Reliable Global Experiences
                     </h3>
 
