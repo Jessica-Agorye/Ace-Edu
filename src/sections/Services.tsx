@@ -1,37 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { servicesData } from "../data/servicesData";
 
 const Services = ({ preview = false }) => {
   const [activeService, setActiveService] = useState("security");
   const [showMore, setShowMore] = useState(false);
-
-  const servicesData = [
-    {
-      service: "security",
-      image: "/images/travel1.jpg",
-      title: "Security",
-      description:
-        "We prioritize your safety throughout every journey, ensuring secure and seamless global experiences wherever you go.",
-      more: "Our safety network includes verified partners, real-time travel monitoring, and emergency support in multiple countries.",
-    },
-    {
-      service: "integrity",
-      image: "/images/travel2.jpg",
-      title: "Integrity",
-      description:
-        "We operate with transparency, trust, and professionalism to provide reliable international opportunities and services.",
-      more: "Every process is handled with honesty, clear communication, and ethical global standards across all services.",
-    },
-    {
-      service: "results",
-      image: "/images/travel3.jpg",
-      title: "Results",
-      description:
-        "From study opportunities to unforgettable travel experiences, we focus on delivering impactful and life-changing outcomes.",
-      more: "We ensure successful applications, visa approvals, and real-world outcomes that help you achieve your goals.",
-    },
-  ];
 
   const activeServiceData = servicesData.find(
     (service) => service.service === activeService,
@@ -105,7 +79,6 @@ const Services = ({ preview = false }) => {
                   transition={{ duration: 0.5 }}
                   className="grid lg:grid-cols-2 gap-14 items-start mt-16"
                 >
-              
                   <div>
                     <h3 className="text-3xl md:text-4xl  font-bold text-gray-900 leading-tight">
                       Delivering Reliable Global Experiences

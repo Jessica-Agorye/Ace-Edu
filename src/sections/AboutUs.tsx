@@ -10,35 +10,23 @@ const aboutUsText = [
 
   {
     img: "/images/job.png",
-    title: "Work",
+    title: "Visa Advisory & Processing Facilitation",
     description:
-      "Connecting individuals with international work experiences and career growth opportunities.",
+      "Connecting  Ace will be your reliable partner in obtaining the necessary visa for your chosen study destination. We will provide valuable insights, assist with the application process, and ensure you are well-prepared for your visa interview.individuals with international work experiences and career growth opportunities.",
   },
 
   {
     img: "/images/travel.png",
-    title: "Travel",
+    title: "University/College Selection & Application Support",
     description:
-      "Creating unforgettable travel experiences tailored to adventure, culture, and exploration.",
+      "We provide detailed information on universities and colleges in Europe, America, Asia, and Australia. Navigate the complex admission process with ease. Our team will guide you through application requirements, documentation, and submission to increase your chances of securing admission.",
   },
 
   {
     img: "/images/tour.png",
-    title: "Tourism",
+    title: "Immigration and Tourism",
     description:
-      "Curating premium tourism experiences across breathtaking destinations around the world.",
-  },
-  {
-    img: "/images/tour.png",
-    title: "Tourism",
-    description:
-      "Curating premium tourism experiences across breathtaking destinations around the world.",
-  },
-  {
-    img: "/images/tour.png",
-    title: "Tourism",
-    description:
-      "Curating premium tourism experiences across breathtaking destinations around the world.",
+      "Ace also offers expert guidance and support for those interested in immigration and exploring tourism opportunities. Whether you are considering permanent residency, work permits, or vacation experiences, our team will provide valuable insights and assistance throughout the process.",
   },
 ];
 
