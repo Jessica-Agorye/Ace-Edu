@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import ServicesPage from "./pages/ServicesPage";
-// import ServiceDetails from "./pages/ServiceDetails";
+import ServiceDetails from "./pages/ServiceDetails";
 import GetStarted from "./components/GetStarted";
 import BookCall from "./components/BookCall";
 import Pricing from "./sections/Pricing";
@@ -22,6 +22,7 @@ const App = () => {
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/book-call" element={<BookCall />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/services/:slug" element={<ServiceDetails />} />
       </Route>
     </Routes>
   );
