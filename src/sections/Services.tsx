@@ -37,50 +37,34 @@ const Services = ({ preview = false }) => {
     {
       id: 1,
       title: "Study Abroad",
-      slug: "study-abroad",
+      path: "/study-abroad",
       image: "/images/travel1.jpg",
       description:
         "Get expert support with university admissions, applications, and international student opportunities.",
     },
     {
       id: 2,
-      title: "Visa Assistance",
-      slug: "visa-assistance",
+      title: "Traveland Tour",
+      path: "/travel-tour",
       image: "/images/travel2.jpg",
       description:
         "Professional guidance to help you prepare and submit successful visa applications.",
     },
     {
       id: 3,
-      title: "Tour Packages",
-      slug: "tour-packages",
+      title: "Premium Consulting",
+      path: "/premium-consulting",
       image: "/images/travel3.jpg",
       description:
         "Discover exciting local and international destinations through curated travel experiences.",
     },
     {
       id: 4,
-      title: "Flight Reservations",
-      slug: "flight-reservations",
+      title: "Career and Leadership",
+      path: "/career-leadership",
       image: "/images/travel1.jpg",
       description:
-        "Find convenient and affordable flight options for business, study, or leisure travel.",
-    },
-    {
-      id: 5,
-      title: "Hotel Booking",
-      slug: "hotel-booking",
-      image: "/images/travel2.jpg",
-      description:
-        "Access quality accommodations that suit your comfort, schedule, and budget.",
-    },
-    {
-      id: 6,
-      title: "Travel Consultation",
-      slug: "travel-consultation",
-      image: "/images/travel3.jpg",
-      description:
-        "Receive personalized travel advice and planning support from experienced consultants.",
+        "Develop your professional skills and advance your career with our leadership programs.",
     },
   ];
   const activeServiceData = servicesData.find(
@@ -111,7 +95,7 @@ const Services = ({ preview = false }) => {
             {services.map((service) => (
               <Link
                 key={service.id}
-                to={`/services/${service.slug}`}
+                to={service.path}
                 className="group rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-amber-200 hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
               >
                 <div className="overflow-hidden">

@@ -2,12 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import ServicesPage from "./pages/ServicesPage";
-import ServiceDetails from "./pages/ServiceDetails";
 import GetStarted from "./components/GetStarted";
 import BookCall from "./components/BookCall";
 import Pricing from "./sections/Pricing";
 import FAQ from "./sections/Faq";
 import Blog from "./sections/Blog";
+import StudyAbroad from "./ServicesPages/StudyAbroad";
+import TravelAndTour from "./ServicesPages/TravelAndTour";
 
 const App = () => {
   return (
@@ -16,13 +17,13 @@ const App = () => {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
-        {/* <Route path="/services/:serviceId" element={<ServiceDetails />} /> */}
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/book-call" element={<BookCall />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/services/:slug" element={<ServiceDetails />} />
+        <Route path="/study-abroad" element={<StudyAbroad />} />
+        <Route path="/travel-tour" element={<TravelAndTour />} />
       </Route>
     </Routes>
   );
