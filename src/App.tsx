@@ -10,6 +10,7 @@ import Blog from "./sections/Blog";
 import StudyAbroad from "./ServicesPages/StudyAbroad";
 import TravelAndTour from "./ServicesPages/TravelAndTour";
 import PremiumConsulting from "./ServicesPages/PremiumConsulting";
+import CareerLeadership from "./ServicesPages/CareerLeadership";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/study-abroad" element={<StudyAbroad />} />
         <Route path="/travel-tour" element={<TravelAndTour />} />
         <Route path="/premium-consulting" element={<PremiumConsulting />} />
+        <Route path="/career-leadership" element={<CareerLeadership />} />
       </Route>
     </Routes>
   );
