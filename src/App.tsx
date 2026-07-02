@@ -9,6 +9,7 @@ import FAQ from "./sections/Faq";
 import Blog from "./sections/Blog";
 import StudyAbroad from "./ServicesPages/StudyAbroad";
 import TravelAndTour from "./ServicesPages/TravelAndTour";
+import PremiumConsulting from "./ServicesPages/PremiumConsulting";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/study-abroad" element={<StudyAbroad />} />
         <Route path="/travel-tour" element={<TravelAndTour />} />
+        <Route path="/premium-consulting" element={<PremiumConsulting />} />
       </Route>
     </Routes>
   );
