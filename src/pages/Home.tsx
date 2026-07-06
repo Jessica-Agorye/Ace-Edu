@@ -1,6 +1,6 @@
 import Hero from "../sections/Hero";
 import AboutUs from "../sections/AboutUs";
-import Services from "../sections/Services";
+// import Services from "../sections/Services";
 // import ChatWidget from "./components/ChatWidget";
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Hero />
       <AboutUs />
-      <Services preview={true} />
+      {/* <Services preview={true} /> */}
 
       {/* <ChatWidget /> */}
     </>
