@@ -38,10 +38,10 @@ const studyAbroadData = [
     image: "/images/travel1.jpg",
 
     description1:
-      "Studying abroad provides access to world-class education, international exposure, and career opportunities. Our study abroad service helps students identify suitable institutions and programs that align with their academic and professional aspirations.",
+      "Studying abroad provides access to world-class education, international exposure, and career opportunities. Our study abroad service helps students identify suitable institutions and programs that align with their academic and professional aspirations. ACE is an Education and Travel consultancy business registered with the Corporate Affairs Commission (CAC). At Ace, you get to discover why you should study abroad, where to study and how to process your admission and visa.",
 
     description2:
-      "ACE is an Education and Travel consultancy business registered with the Corporate Affairs Commission (CAC). At Ace, you get to discover why you should study abroad, where to study and how to process your admission and visa.Our services include full professional support to those interested in studying and living abroad. Our professional support covers countries in Europe, America, Asia and Australia. Staff experience is top-notch and they are available to provide you with the best service that would enable you to realize your dreams. Ace Consult also offers special benefits that include From university selection to application submission and visa preparation, we provide end-to-end support throughout the admission process, ensuring students have the resources needed to succeed.",
+      "Our services include full professional support to those interested in studying and living abroad. Our professional support covers countries in Europe, America, Asia and Australia. Staff experience is top-notch and they are available to provide you with the best service that would enable you to realize your dreams. Ace Consult also offers special benefits that include From university selection to application submission and visa preparation, we provide end-to-end support throughout the admission process, ensuring students have the resources needed to succeed.",
 
     offerings: [
       "Full Professional Support.",
