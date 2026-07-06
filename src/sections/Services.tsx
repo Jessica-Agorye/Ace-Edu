@@ -73,58 +73,6 @@ const Services = ({ preview = false }) => {
 
   return (
     <>
-      <section className="py-24 px-5 md:px-10 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl">
-            <span className="text-amber-500 font-semibold uppercase tracking-widest">
-              Our Services
-            </span>
-
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
-              Services Designed For Every Journey
-            </h2>
-
-            <p className="mt-6 text-lg text-gray-600 leading-8">
-              From study opportunities abroad to visa processing and vacation
-              planning, we provide comprehensive travel solutions tailored to
-              your needs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            {services.map((service) => (
-              <Link
-                key={service.id}
-                to={service.path}
-                className="group rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-amber-200 hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition duration-500"
-                  />
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {service.title}
-                    </h3>
-
-                    <span className="text-amber-500 text-2xl">↗</span>
-                  </div>
-
-                  <p className="mt-4 text-gray-600 leading-7">
-                    {service.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section
         id="services"
         className="relative py-24 px-5 md:px-10 bg-[#f8fafc] overflow-hidden"
@@ -231,7 +179,7 @@ const Services = ({ preview = false }) => {
                       <img
                         src={activeServiceData.image}
                         alt={activeServiceData.title}
-                        className="relative z-10 w-full md:w-[95%] h-[350px] md:h-[550px] object-cover"
+                        className="relative z-10 w-full md:w-[95%] h-[250px] md:h-[350px] object-cover"
                       />
                     </div>
                   </motion.div>
@@ -246,6 +194,57 @@ const Services = ({ preview = false }) => {
               </div>
             </>
           )}
+        </div>
+      </section>
+      <section className="py-24 px-5 md:px-10 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <span className="text-amber-500 font-semibold uppercase tracking-widest">
+              Our Services
+            </span>
+
+            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+              Services Designed For Every Journey
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-600 leading-8">
+              From study opportunities abroad to visa processing and vacation
+              planning, we provide comprehensive travel solutions tailored to
+              your needs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            {services.map((service) => (
+              <Link
+                key={service.id}
+                to={service.path}
+                className="group rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-amber-200 hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {service.title}
+                    </h3>
+
+                    <span className="text-amber-500 text-2xl">↗</span>
+                  </div>
+
+                  <p className="mt-4 text-gray-600 leading-7">
+                    {service.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>
