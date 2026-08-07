@@ -50,10 +50,6 @@ const travelTourData = [
       "Access to Student Loans and Scholarships.",
       "Scholarship guidance",
       "Open-Ended Tuition Payment Plan",
-      // "Application tracking support",
-      // "Student visa assistance",
-      // "Pre-departure orientation",
-      // "Accommodation guidance",
     ],
   },
 

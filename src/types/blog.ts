@@ -1,8 +1,10 @@
-export type BlogPost = {
+export interface BlogPost {
+  id: number;
   title: string;
   slug: string;
   category: string;
   description: string;
-  image: string;
+  content: string;
   date: string;
-};
+  image: string;
+}

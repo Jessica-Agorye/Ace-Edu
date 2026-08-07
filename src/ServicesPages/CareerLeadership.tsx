@@ -1,7 +1,6 @@
 export default function CareerLeadership() {
   return (
     <main>
-      {/* Hero */}
       <section className="relative min-h-[70vh] md:min-h-[80vh] bg-[url('/images/travel1.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-5">
           <div className="w-full max-w-4xl text-center text-white">
@@ -22,9 +21,7 @@ export default function CareerLeadership() {
         </div>
       </section>
 
-      {/* Main Content */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8 py-16 md:py-20 space-y-20 md:space-y-24">
-        {/* About */}
         <section className="space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="space-y-6">
@@ -58,7 +55,6 @@ export default function CareerLeadership() {
           </div>
         </section>
 
-        {/* Benefits */}
         <section className="space-y-8">
           <p className="max-w-5xl text-base leading-8 text-gray-600">
             We love the term <strong>Professional Manifesto</strong> because a
@@ -126,7 +122,6 @@ export default function CareerLeadership() {
           </div>
         </section>
 
-        {/* Services */}
         <section className="space-y-6 text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
             Career & Leadership Services We Offer
@@ -137,11 +132,8 @@ export default function CareerLeadership() {
             mentoring, and professional growth solutions tailored to your career
             aspirations.
           </p>
-
-          {/* Add your service cards here */}
         </section>
 
-        {/* CTA */}
         <section className="bg-blue-600 rounded-2xl text-white text-center py-12 sm:py-16 px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Ready To Take The Next Step?

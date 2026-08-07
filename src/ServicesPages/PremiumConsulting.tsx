@@ -9,7 +9,6 @@ export default function PremiumConsulting() {
 
   return (
     <main>
-      {/* Hero */}
       <section className="relative min-h-[70vh] md:min-h-[80vh] bg-[url('/images/travel1.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 flex items-center justify-center bg-black/60">
           <div className="mx-auto max-w-4xl px-5 text-center text-white sm:px-8">
@@ -30,7 +29,6 @@ export default function PremiumConsulting() {
       </section>
 
       <div className="mx-auto max-w-7xl space-y-20 px-5 py-16 sm:px-6 md:space-y-24 md:py-20 lg:px-8">
-        {/* About */}
         <section className="space-y-10">
           <div className="max-w-4xl">
             <h2 className="mb-5 text-2xl font-bold sm:text-3xl lg:text-4xl">
@@ -66,7 +64,6 @@ export default function PremiumConsulting() {
           </div>
         </section>
 
-        {/* Vision & Mission */}
         <section className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="rounded-2xl border border-gray-200 p-8 transition hover:shadow-md">
             <h2 className="mb-5 text-2xl font-bold text-blue-600">
@@ -94,7 +91,6 @@ export default function PremiumConsulting() {
           </div>
         </section>
 
-        {/* Core Values */}
         <section className="space-y-8">
           <div className="max-w-3xl">
             <h2 className="mb-5 text-2xl font-bold sm:text-3xl lg:text-4xl">
@@ -120,7 +116,6 @@ export default function PremiumConsulting() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="rounded-2xl bg-blue-600 px-6 py-14 text-center text-white sm:py-16 lg:px-10 lg:py-20">
           <h2 className="mb-5 text-3xl font-bold sm:text-4xl lg:text-5xl">
             Ready To Begin Your Journey?

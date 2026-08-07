@@ -6,12 +6,10 @@ const BookCall = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-5 md:px-10 bg-[#f8fafc] overflow-hidden">
-      {/* Background Glow */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/20 blur-3xl rounded-full"></div>
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-200/20 blur-3xl rounded-full"></div>
 
       <div className="max-w-3xl w-full text-center relative z-10">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +29,6 @@ const BookCall = () => {
           </p>
         </motion.div>
 
-        {/* Card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +61,6 @@ const BookCall = () => {
             <li>✔ Travel Planning Advice</li>
           </ul>
 
-          {/* CTA */}
           <a href={calendlyLink} target="_blank" rel="noreferrer">
             <button className="mt-8 w-full flex items-center justify-center gap-2 py-4 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-md">
               Schedule on Calendly

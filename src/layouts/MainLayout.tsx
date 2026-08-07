@@ -7,7 +7,7 @@ const MainLayout = () => {
     <>
       <Navbar />
       <div className="pt-[90px]">
-        <Outlet /> {/* pages show here */}
+        <Outlet />
       </div>
       <Footer />
     </>

@@ -40,11 +40,9 @@ const GetStarted = () => {
 
   return (
     <section className="relative py-24 px-5 md:px-10 bg-[#f8fafc] overflow-hidden">
-      {/* Glow */}
       <div className="absolute right-0 top-20 w-72 h-72 bg-amber-200/20 blur-3xl rounded-full"></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +64,6 @@ const GetStarted = () => {
           </p>
         </motion.div>
 
-        {/* Form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 40 }}
@@ -84,7 +81,6 @@ const GetStarted = () => {
             space-y-6
           "
         >
-          {/* Inputs */}
           <div className="grid md:grid-cols-2 gap-5">
             <input
               name="fullName"
@@ -132,7 +128,6 @@ const GetStarted = () => {
             />
           </div>
 
-          {/* Message */}
           <textarea
             name="message"
             placeholder="Tell us about your goals..."
@@ -141,7 +136,6 @@ const GetStarted = () => {
             className={inputClass}
           />
 
-          {/* Submit */}
           <button
             type="submit"
             className="

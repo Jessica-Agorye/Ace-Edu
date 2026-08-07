@@ -14,7 +14,6 @@ const travelServices = [
 export default function TravelAndTour() {
   return (
     <main>
-      {/* Hero */}
       <section className="relative min-h-[70vh] md:min-h-[80vh] bg-[url('/images/travel1.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 flex items-center justify-center bg-black/60">
           <div className="mx-auto max-w-4xl px-5 text-center text-white sm:px-8">
@@ -35,7 +34,6 @@ export default function TravelAndTour() {
       </section>
 
       <div className="mx-auto max-w-7xl space-y-20 px-5 py-16 sm:px-6 md:space-y-24 md:py-20 lg:px-8">
-        {/* About */}
         <section className="space-y-10">
           <div className="max-w-4xl">
             <h2 className="mb-5 text-2xl font-bold sm:text-3xl lg:text-4xl">
@@ -73,7 +71,6 @@ export default function TravelAndTour() {
           </div>
         </section>
 
-        {/* Benefits */}
         <section className="space-y-8">
           <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
             Why Choose Our Travel Services?
@@ -96,7 +93,6 @@ export default function TravelAndTour() {
           </div>
         </section>
 
-        {/* More Information */}
         <section className="space-y-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
             <p className="max-w-prose text-gray-600 leading-8">
@@ -113,7 +109,6 @@ export default function TravelAndTour() {
           </div>
         </section>
 
-        {/* Services */}
         <section className="space-y-8">
           <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
             Travel & Tour Services We Offer
@@ -131,7 +126,6 @@ export default function TravelAndTour() {
           </div>
         </section>
 
-        {/* Closing */}
         <section className="rounded-2xl bg-blue-50 p-6 sm:p-8 lg:p-10">
           <h2 className="mb-6 text-2xl font-bold sm:text-3xl lg:text-4xl">
             Travel Without The Stress
@@ -150,7 +144,6 @@ export default function TravelAndTour() {
           </p>
         </section>
 
-        {/* CTA */}
         <section className="rounded-2xl bg-blue-600 px-6 py-14 text-center text-white sm:py-16 lg:px-10 lg:py-20">
           <h2 className="mb-5 text-3xl font-bold sm:text-4xl lg:text-5xl">
             Ready For Your Next Adventure?

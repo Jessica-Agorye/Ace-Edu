@@ -4,9 +4,9 @@ import Home from "./pages/Home";
 import ServicesPage from "./pages/ServicesPage";
 import GetStarted from "./components/GetStarted";
 import BookCall from "./components/BookCall";
-// import Pricing from "./sections/Pricing";
 import FAQ from "./sections/Faq";
-import Blog from "./sections/Blog";
+import BlogPage from "./pages/BlogPage";
+import BlogDetails from "./pages/BlogDetails";
 import StudyAbroad from "./ServicesPages/StudyAbroad";
 import TravelAndTour from "./ServicesPages/TravelAndTour";
 import PremiumConsulting from "./ServicesPages/PremiumConsulting";
@@ -15,15 +15,14 @@ import CareerLeadership from "./ServicesPages/CareerLeadership";
 const App = () => {
   return (
     <Routes>
-      {/* WRAP ALL ROUTES HERE */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
-        {/* <Route path="/pricing" element={<Pricing />} /> */}
         <Route path="/faq" element={<FAQ />} />
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/book-call" element={<BookCall />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/study-abroad" element={<StudyAbroad />} />
         <Route path="/travel-tour" element={<TravelAndTour />} />
         <Route path="/premium-consulting" element={<PremiumConsulting />} />

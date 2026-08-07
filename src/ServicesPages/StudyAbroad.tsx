@@ -62,8 +62,6 @@ export default function StudyAbroad() {
       </section>
 
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-20 space-y-24">
-        {/* About */}
-
         <section>
           <h2 className="text-3xl font-bold mb-6">
             Study Abroad With Confidence
@@ -75,8 +73,6 @@ export default function StudyAbroad() {
             <p className="text-gray-600 leading-8">{study.description2}</p>
           </div>
         </section>
-
-        {/* Why Study Abroad */}
 
         <section>
           <h2 className="text-3xl font-bold mb-8">Why Study Abroad?</h2>
