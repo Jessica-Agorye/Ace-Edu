@@ -1,34 +1,47 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-import { BlogPost } from "../types/blog";
+import type { BlogPost } from "../lib/blogApi";
 
 interface BlogCardProps {
   post: BlogPost;
 }
 
 const BlogCard = ({ post }: BlogCardProps) => {
+  const image = post.fields.featuredImage;
+
+  const imageUrl =
+    "fields" in image && image.fields.file
+      ? `https:${image.fields.file.url}`
+      : "";
+
   return (
     <article className="rounded-xl overflow-hidden shadow bg-white">
-      <img
-        src={post.image}
-        alt={post.title}
-        className="w-full h-64 object-cover"
-      />
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          alt={post.fields.title}
+          className="w-full h-64 object-cover"
+        />
+      )}
 
       <div className="p-6">
         <div className="flex justify-between text-sm">
-          <span>{post.category}</span>
+          <span>{post.fields.category}</span>
 
-          <span>{post.date}</span>
+          <span>{post.fields.date}</span>
         </div>
 
-        <h2 className="text-2xl font-bold mt-3">{post.title}</h2>
+        <h2 className="text-2xl font-bold mt-3">
+          {post.fields.title}
+        </h2>
 
-        <p className="mt-4">{post.description}</p>
+        <p className="mt-4">
+          {post.fields.excerpt}
+        </p>
 
         <Link
-          to={`/blog/${post.slug}`}
+          to={`/blog/${post.fields.slug}`}
           className="flex items-center gap-2 mt-6"
         >
           Read Article
