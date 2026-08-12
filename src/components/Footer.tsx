@@ -1,48 +1,75 @@
 import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    url: "https://facebook.com/yourusername",
+    icon: FaFacebook,
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/yourusername",
+    icon: FaInstagram,
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/yourusername",
+    icon: FaTwitter,
+  },
+];
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gray-950 text-white overflow-hidden">
-      <div className="absolute left-0 top-0 w-72 h-72 bg-amber-500/10 blur-3xl rounded-full"></div>
+    <footer className="relative overflow-hidden bg-gray-950 text-white">
+      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-16">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="relative mx-auto max-w-7xl px-5 py-16 md:px-10">
+        <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold mb-3">Ace Travel</h3>
+            <h3 className="mb-3 text-2xl font-bold">Ace Travel</h3>
 
-            <p className="text-gray-400 text-sm leading-relaxed max-w-md mx-auto md:mx-0">
+            <p className="mx-auto max-w-md text-sm leading-relaxed text-gray-400 md:mx-0">
               Creating global opportunities for study, work, tourism, and
               unforgettable travel experiences.
             </p>
 
-            <p className="text-gray-500 text-sm mt-6">
+            <p className="mt-6 text-sm text-gray-500">
               © {new Date().getFullYear()} All rights reserved.
             </p>
           </div>
 
-          <div className="flex flex-col items-center md:items-end gap-6">
-            <ul className="flex flex-wrap justify-center md:justify-end gap-6 text-sm text-gray-400">
-              <li className="hover:text-amber-400 cursor-pointer transition">
-                Facebook
-              </li>
-              <li className="hover:text-amber-400 cursor-pointer transition">
-                Instagram
-              </li>
-              <li className="hover:text-amber-400 cursor-pointer transition">
-                Twitter
-              </li>
+          <div className="flex flex-col items-center gap-6 md:items-end">
+            <ul className="flex items-center justify-center gap-6 md:justify-end">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+
+                return (
+                  <li key={social.name}>
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit our ${social.name} page`}
+                      className="text-gray-400 transition hover:text-amber-400"
+                    >
+                      <Icon size={22} />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
 
             <Link
               to="/book-call"
-              className="px-6 py-3 rounded-full bg-amber-500 text-white text-sm font-semibold hover:bg-amber-400 transition text-center"
+              className="rounded-full bg-amber-500 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-amber-400"
             >
               Book a Consultation
             </Link>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-xs">
+        <div className="mt-12 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
           Built with care for global explorers ✈️
         </div>
       </div>
