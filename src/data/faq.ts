@@ -229,70 +229,65 @@ export const faqCategories: FAQCategory[] = [
           "The appropriate next step depends on the refusal reason and the destination's rules. The refusal letter should be reviewed carefully before deciding whether to reapply, appeal where permitted, or address deficiencies in a new application. ",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Can I book a flight before my visa is approved? ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "This depends on the destination and the applicant's circumstances. Where possible, applicants should understand the visa authority's guidance on flight bookings and choose refundable or flexible arrangements when appropriate.",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Can Ace help with flight bookings and travel planning?  ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Yes. Ace's Travel and Tours service includes travel-management support and travel experiences for business and leisure travellers.",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Can Ace help me plan a business trip to China? ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Ace provides travel and tour support, and can assist with planning subject to the specific destination, visa category, itinerary and current entry requirements.",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Can Ace organise group travel?  ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Yes. The Travel and Tours service describes packages for companies, individuals and groups. ",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Can Ace arrange educational trips or field trips? ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Yes. The website describes educational field-trip services designed to support learning, cross-cultural understanding and travel programming. .",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "CCan I travel with my family?  ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Family travel is possible where each traveller satisfies the destination's entry and visa requirements. Children may have additional documentation requirements, including consent or birth documents depending on the destination.",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "What should I do if my passport is about to expire? ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Check the destination's passport-validity requirement before travelling. Many destinations require a passport to remain valid beyond the intended travel period. ",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Can I travel while my passport is being renewed?  ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "International travel generally requires a valid travel document. The applicant should wait for the new passport or confirm the specific rules before making travel arrangements. ",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "How early should I start my visa application? ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Start as early as the destination's rules and your intended travel date allow. Processing times vary, and applicants should also allow time for document preparation, biometrics, interviews and possible requests for additional information. ",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Can I change my travel dates after receiving a visa? ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "Possibly, depending on the visa conditions, validity period and airline or booking rules. A visa's validity does not necessarily mean you can enter at any time or stay for any duration. ",
       },
       {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
+        question: "Does a visa guarantee entry into a country?  ",
         answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
-      },
-      {
-        question: "Can I apply for a visa if I am self-employed in Nigeria? ",
-        answer:
-          "Some immigration pathways may provide a route toward permanent residence, but this depends on the country, visa category, and your circumstances.",
+          "No. A visa generally permits a traveller to seek entry, but border officials retain authority to assess admissibility under the destination's laws. ",
       },
     ],
   },
 
   {
-    title: "Travel & Relocation",
+    title: "Additional FAQs",
     description:
       "Practical questions about preparing for your trip or move abroad.",
     questions: [
