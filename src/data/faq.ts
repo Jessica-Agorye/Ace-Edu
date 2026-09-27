@@ -292,29 +292,100 @@ export const faqCategories: FAQCategory[] = [
       "Practical questions about preparing for your trip or move abroad.",
     questions: [
       {
-        question: "How early should I start planning my trip?",
+        question:
+          "Do I need an international passport before starting my travel or study application? ",
         answer:
-          "It is generally helpful to begin planning well in advance so you have enough time for documentation, visa processing, accommodation, flights, and other arrangements.",
+          "A valid passport is commonly required at later stages and for international travel. If you do not yet have one, Ace can advise you on the documentation needed for your specific process. ",
       },
       {
-        question: "Can you help me plan my relocation?",
+        question: "Can I pay for Ace's services in instalments? ",
         answer:
-          "Yes. We can help you understand the major steps involved in preparing for an international move, depending on your destination and purpose of travel.",
+          "Payment arrangements depend on the specific service and current commercial terms. Clients should request the applicable payment structure before making a commitment. ",
       },
       {
-        question: "Can you help with accommodation?",
+        question: "How do I know what service is right for me?  ",
         answer:
-          "Depending on the service and destination, we can guide you on accommodation options and what to consider before booking.",
+          "Begin with an assessment of your objective—study, tourism, business travel, immigration, work or another purpose. Ace can then advise on the relevant pathway and requirements. ",
       },
       {
-        question: "Can you help with flight arrangements?",
+        question: "Will Ace submit my application for me? ",
         answer:
-          "We can provide guidance around your travel arrangements and help you understand what to consider when planning your journey.",
+          "The level of support depends on the service purchased and the requirements of the destination or institution. Clients should confirm whether their package covers preparation, submission, monitoring or advisory support. ",
       },
       {
-        question: "What should I prepare before travelling?",
+        question:
+          "Will Ace write or edit my statement of purpose, CV or other documents? ",
         answer:
-          "You should ensure that your passport, visa, travel documents, accommodation information, financial arrangements, and other destination-specific requirements are in order before travelling.",
+          "Ace's website lists professional writing services, including business plans and resumes. The exact documents covered should be confirmed for the service selected. ",
+      },
+      {
+        question:
+          "How do I know whether a school or programme is suitable for me?  ",
+        answer:
+          "The choice should consider your academic background, career objective, budget, admission requirements, programme structure, location and post-study options where relevant. Ace provides study-abroad advisory and institution/programme-selection support.",
+      },
+      {
+        question:
+          "Can I apply if my academic result is not a First Class or 2:1?  ",
+        answer:
+          "Possibly. Admission requirements vary significantly by country, institution and programme. A lower classification does not automatically rule out every option, but suitable programmes must be identified based on their published requirements. ",
+      },
+      {
+        question:
+          "Can I apply for more than one school or country at the same time? ",
+        answer:
+          "In many cases, yes. Applying strategically to multiple suitable options can be possible, subject to each institution's application rules and your budget. The appropriate strategy depends on your profile. ",
+      },
+      {
+        question: "How long does an application take? ",
+        answer:
+          "There is no universal timeline. Admission, visa and travel processes depend on the institution, destination, document readiness, appointment availability and the relevant authorities. ",
+      },
+      {
+        question: "What if I cannot provide one of the requested documents?  ",
+        answer:
+          "Do not substitute or alter documents without guidance. Ask Ace or the relevant institution/authority whether an alternative document, explanation or later submission is permitted. ",
+      },
+      {
+        question: "How do I avoid visa scams or fake admission offers?  ",
+        answer:
+          "Verify institutions and official visa information through the relevant government or institutional websites, avoid paying for guaranteed visas or job offers, request written invoices for professional services, and be cautious of pressure to transfer money to personal accounts. ",
+      },
+      {
+        question: "Can I get a refund if my visa is refused?  ",
+        answer:
+          "Refund terms depend on the service agreement and the stage at which work has been completed. Clients should review the applicable terms before payment. ",
+      },
+      {
+        question: "Does Ace guarantee admission?  ",
+        answer:
+          "Admission decisions are made by educational institutions. A consultancy can support the application process but cannot legitimately guarantee an institution's admission decision.  ",
+      },
+      {
+        question: "Does Ace guarantee a scholarship? ? ",
+        answer:
+          "No scholarship should be treated as guaranteed unless formally awarded by the funding institution. Scholarship availability and eligibility vary by programme and destination. ",
+      },
+      {
+        question: "Can I work while studying abroad ? ",
+        answer:
+          "Work rights depend entirely on the destination, visa type, programme and current immigration rules. Do not assume that a study visa automatically grants a particular number of work hours. ",
+      },
+      {
+        question: "Can my spouse or children accompany me as a student?  ",
+        answer:
+          "This depends on the destination, programme and current immigration rules. Some countries allow eligible dependants while others restrict or condition dependant eligibility.",
+      },
+      {
+        question:
+          "Can Ace help me find accommodation after I receive admission?  ",
+        answer:
+          "Yes. Accommodation arrangements are listed among Ace's study-abroad support services. ",
+      },
+      {
+        question: "Can Ace help after I arrive abroad? ",
+        answer:
+          "Pre-departure and related support are part of the services described by Ace. The exact post-arrival services available should be confirmed for the package selected.",
       },
     ],
   },
