@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { Calendar, ArrowRight } from "lucide-react";
 
 const BookCall = () => {
-  const calendlyLink = "https://calendly.com/your-username/consultation";
+  const googleCalendarLink =
+    import.meta.env.VITE_GOOGLE_CALENDAR ||
+    "https://calendar.app.google/gNF4EqugwcAV5nor6";
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-5 md:px-10 bg-[#f8fafc] overflow-hidden">
       <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/20 blur-3xl rounded-full"></div>
+
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-200/20 blur-3xl rounded-full"></div>
 
       <div className="max-w-3xl w-full text-center relative z-10">
@@ -33,15 +36,7 @@ const BookCall = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="
-            mt-12
-            bg-white/70
-            backdrop-blur-md
-            border border-white/40
-            rounded-3xl
-            p-8 md:p-10
-            shadow-lg
-          "
+          className="mt-12 bg-white/70 backdrop-blur-md border border-white/40 rounded-3xl p-8 md:p-10 shadow-lg"
         >
           <div className="flex items-center justify-center mb-6 text-amber-500">
             <Calendar size={40} />
@@ -61,15 +56,18 @@ const BookCall = () => {
             <li>✔ Travel Planning Advice</li>
           </ul>
 
-          <a href={calendlyLink} target="_blank" rel="noreferrer">
-            <button className="mt-8 w-full flex items-center justify-center gap-2 py-4 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-md">
-              Schedule on Calendly
-              <ArrowRight size={18} />
-            </button>
+          <a
+            href={googleCalendarLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 w-full flex items-center justify-center gap-2 py-4 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-md"
+          >
+            Book a Consultation
+            <ArrowRight size={18} />
           </a>
 
           <p className="mt-4 text-xs text-gray-400">
-            You’ll be redirected to our secure booking page
+            Choose a convenient time from our available appointments.
           </p>
         </motion.div>
       </div>
