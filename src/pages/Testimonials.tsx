@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Quote } from "lucide-react";
 
 const Testimonials = () => {
+  const googleCalendarLink =
+    import.meta.env.VITE_GOOGLE_CALENDAR ||
+    "https://calendar.app.google/gNF4EqugwcAV5nor6";
+
   return (
     <section className="relative min-h-screen px-5 py-20 md:px-10 bg-[#f8fafc] overflow-hidden">
       {/* Background decoration */}
@@ -109,7 +113,7 @@ const Testimonials = () => {
               </p>
 
               <a
-                href="/book-call"
+                href={googleCalendarLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-400 transition duration-300 shadow-md"

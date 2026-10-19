@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -22,14 +23,40 @@ const Footer = () => {
 
           <div className="flex flex-col items-center md:items-end gap-6">
             <ul className="flex flex-wrap justify-center md:justify-end gap-6 text-sm text-gray-400">
-              <li className="hover:text-amber-400 cursor-pointer transition">
-                Facebook
+              <li>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="hover:text-amber-400 transition"
+                >
+                  <FaFacebookF size={18} />
+                </a>
               </li>
-              <li className="hover:text-amber-400 cursor-pointer transition">
-                Instagram
+
+              <li>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="hover:text-amber-400 transition"
+                >
+                  <FaInstagram size={18} />
+                </a>
               </li>
-              <li className="hover:text-amber-400 cursor-pointer transition">
-                Twitter
+
+              <li>
+                <a
+                  href="https://x.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X (Twitter)"
+                  className="hover:text-amber-400 transition"
+                >
+                  <FaXTwitter size={18} />
+                </a>
               </li>
             </ul>
 
